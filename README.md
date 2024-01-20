@@ -27,16 +27,16 @@ Install this library: ```pip install ijson```
 - Would have liked to parameterize the script to accept the json filename. Again would be useful for automation.
 
 ## Questions
-Question: How do you handle the file size and format efficiently, when the uncompressed file will exceed memory limitations on most systems?
+Question: How do you handle the file size and format efficiently, when the uncompressed file will exceed memory limitations on most systems?  
 Answer: I utilized IJSON library to parse the file iteratively.
 
-Question: When you look at your output URL list, which segments of the URL are changing, which segments are repeating, and what might that mean?
+Question: When you look at your output URL list, which segments of the URL are changing, which segments are repeating, and what might that mean?  
 Answer: 1. there is 01_of_03, 02_of_03, etc... This suggests that the files have been broken up into parts. 2. There is the expires date, seems to be the same for the parts of the same files but different for each separate files. Suggest to me that each file has its own expiration. 3. Each file has a signature, some of the signatures are exactly the same for different files. A signature in a url usally indicated specified permission and time. The repeating signatures could be that they have the same permissions or expiration dates.
 
-Question: Is the description field helpful? Complete? Is Highmark the same as Anthem?
+Question: Is the description field helpful? Complete? Is Highmark the same as Anthem?  
 Answer: It seems the description field indicates the state and some plan info. I found this to be useful. From what I gather Highmark and Anthem are the same as they always have Anthem in the URL and this file is for Anthem.
 
-Question: Anthem has an interactive MRF lookup system. This lookup can be used to gather additional information - but it requires you to input the EIN or name of an employer who offers an Anthem health plan: Anthem EIN lookup. How can you find a businesss likely to be in the Anthem NY PPO? How can you use this tool to confirm which underlying file(s) represent the Anthem NY PPO?
+Question: Anthem has an interactive MRF lookup system. This lookup can be used to gather additional information - but it requires you to input the EIN or name of an employer who offers an Anthem health plan: Anthem EIN lookup. How can you find a businesss likely to be in the Anthem NY PPO? How can you use this tool to confirm which underlying file(s) represent the Anthem NY PPO?  
 Answer: You can manually look at the descriptions to see if a company is within Anthem NY PPO and then search the EIN or business name in the lookup tool to confirm it. Similarily once confirmed you can then look at there file names to find a pattern that matches with all NY Anthem PPO.
 
 ## Final thoughts
